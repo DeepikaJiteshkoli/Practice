@@ -1,0 +1,53 @@
+<h1>{{arr}}</h1>
+
+<!-- *ngFor="let y of var_name"
+
+    ngStyle
+    ngClass
+
+
+ -->
+ <div *ngFor="let a of arr ">
+    {{a}}
+ </div>
+
+ <table width="60%" border="3px solid black;">
+    <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>contact</th>
+    </tr>
+    <tr *ngFor="let y of personDetails">
+<td>{{y.id}}</td>
+<td>{{y.name}}</td>
+<td>{{y.contact}}</td>
+    </tr>
+ </table>
+
+ <div *ngIf="colors else elsecolor">i will be visible if i m true!</div>
+
+ <ng-template #elsecolor>
+    <h1>i will be not visible if i m false!!</h1>
+ </ng-template>
+
+
+
+
+
+
+ <div *ngIf="myage<18;  then ifblock else elseifblock"></div>
+
+ <ng-template #ifblock>
+    <h1 [style.color]="'green'">your age is greater so you can vote </h1>
+ </ng-template>
+
+
+ <ng-template #elseifblock>
+<h2 [style.color]="'red'">your age is smaller then 18 so you can't vote!</h2>
+ </ng-template>
+
+
+
+ <div *ngIf="condition; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>Content to render when condition is true.</ng-template>
+<ng-template #elseBlock>Content to render when condition is false.</ng-template>
